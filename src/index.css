@@ -1,3 +1,104 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ================================
+   FEDERATION CALENDAR THEME
+   ================================ */
+
+/* Calendar root */
+.fc {
+  background-color: #050609 !important;
+  border: 1px solid #2b221b !important;
+  border-radius: 14px !important;
+  padding: 8px;
+}
+
+/* Header title (month name) */
+.fc-toolbar-title {
+  color: #e9dfc9 !important;
+  font-weight: 600 !important;
+}
+
+/* Nav + view buttons */
+.fc-button {
+  background: #0f0d0b !important;
+  border: 1px solid #3a2e22 !important;
+  color: #d7c8b4 !important;
+  border-radius: 6px !important;
+  text-transform: none !important;
+}
+
+.fc-button:hover {
+  background: #1a1714 !important;
+  color: #f6d48b !important;
+}
+
+.fc-button-active {
+  background: #2c231d !important;
+  color: #f6d48b !important;
+  border-color: #70512f !important;
+}
+
+/* Grid lines */
+.fc-scrollgrid,
+.fc-scrollgrid table {
+  border-color: #3d3228 !important;
+}
+
+/* Day cells (all days) */
+.fc-daygrid-day {
+  background-color: #070707 !important;
+  border-color: #33281f !important;
+}
+
+/* Today highlight */
+.fc-day-today {
+  background: rgba(246, 212, 139, 0.12) !important;
+  border: 1px solid #f6d48b !important;
+  box-shadow: 0 0 12px rgba(246, 212, 139, 0.35) inset;
+}
+
+/* Days from previous / next month – no white! */
+.fc-day-other {
+  background-color: #0b0a0a !important;
+  opacity: 0.45;
+}
+
+/* Day numbers */
+.fc-daygrid-day-number {
+  color: #c8bfb1 !important;
+  font-weight: 500 !important;
+}
+
+/* Event pill styling */
+.fc-daygrid-event {
+  background: #184674 !important;
+  border: 1px solid #376897 !important;
+  border-radius: 6px !important;
+  padding: 3px 6px !important;
+  box-shadow: 0 0 6px rgba(23, 105, 165, 0.4);
+}
+
+.fc-daygrid-event:hover {
+  background: #1f5a96 !important;
+  border-color: #4c88b9 !important;
+  box-shadow: 0 0 10px rgba(60, 140, 200, 0.5);
+}
+
+/* Event title text */
+.fc-event-title {
+  color: #eaeaea !important;
+  font-weight: 600 !important;
+  font-size: 0.78rem !important;
+}
+
+/* Week/Day time grid background */
+.fc-timegrid-slot {
+  background-color: #050609 !important;
+  border-color: #2f241b !important;
+}
+
+.fc-timegrid-axis {
+  color: #b9afa2 !important;
+}
