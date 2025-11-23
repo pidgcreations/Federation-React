@@ -1,0 +1,1 @@
+export default function GuideCrates(){return <div>Guide Crates Page Coming</div>}
