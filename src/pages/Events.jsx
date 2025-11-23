@@ -60,6 +60,14 @@ function discordMarkdownToHtml(str = "") {
   return s;
 }
 
+// Detect and convert plain URLs into clickable <a> links
+function linkify(str = "") {
+  return str.replace(
+    /(https?:\/\/[^\s]+)/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-[#f6d48b] underline">$1</a>'
+  );
+}
+
 // date-fns localizer for react-big-calendar
 const locales = {}; // use browser default locale
 
@@ -131,7 +139,6 @@ export default function Events() {
             description: evt.description || "",
             location,
             coverImage,
-            // keep the raw event if we ever need more
             raw: evt,
           };
         });
@@ -246,8 +253,10 @@ export default function Events() {
                   <div
                     className="text-sm text-[#c9c3b6] mt-2 line-clamp-3"
                     dangerouslySetInnerHTML={{
-                      __html: discordMarkdownToHtml(
-                        cleanDiscordText(evt.description)
+                      __html: linkify(
+                        discordMarkdownToHtml(
+                          cleanDiscordText(evt.description)
+                        )
                       ),
                     }}
                   />
@@ -274,11 +283,13 @@ export default function Events() {
             className="bg-[#050609] border border-[#392f28] rounded-xl max-w-2xl w-full mx-4 shadow-xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Event Banner */}
             {selectedEvent.coverImage && (
               <img
                 src={selectedEvent.coverImage}
                 alt={selectedEvent.title}
-                className="w-full h-48 object-cover border-b border-[#392f28]"
+                className="w-full max-h-[400px] object-contain bg-black border-b border-[#392f28]"
+                loading="lazy"
               />
             )}
 
@@ -315,8 +326,10 @@ export default function Events() {
                 <div
                   className="text-sm text-[#c9c3b6] mt-2 space-y-1"
                   dangerouslySetInnerHTML={{
-                    __html: discordMarkdownToHtml(
-                      cleanDiscordText(selectedEvent.description)
+                    __html: linkify(
+                      discordMarkdownToHtml(
+                        cleanDiscordText(selectedEvent.description)
+                      )
                     ),
                   }}
                 />
