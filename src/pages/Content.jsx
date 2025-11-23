@@ -1,3 +1,4 @@
+// src/pages/Content.jsx
 import React from "react";
 
 export default function Content() {
@@ -12,8 +13,9 @@ export default function Content() {
           moments to quest highlights and community events.
         </p>
 
+        {/* COMING SOON PANEL */}
         <div className="grid md:grid-cols-3 gap-5 text-sm">
-          {/* Main coming-soon panel */}
+          {/* Main “coming soon” description */}
           <article className="md:col-span-2 rounded-2xl border border-[#302823] bg-[#0b0908] p-5">
             <h2 className="font-semibold text-[#f6d48b] mb-2 text-lg">
               Player Content Submissions Coming Soon
@@ -28,7 +30,7 @@ export default function Content() {
             <ul className="list-disc list-inside space-y-2 text-[#d9cfbf]">
               <li>
                 <span className="font-semibold">Raids:</span> first kills, clean
-                runs, funny wipes.
+                runs, and funny wipes.
               </li>
               <li>
                 <span className="font-semibold">PvP:</span> arenas, sieges, node
@@ -40,6 +42,64 @@ export default function Content() {
               </li>
               <li>
                 <span className="font-semibold">Community:</span> events, guild
-                activities, and crossover game nights.
+                activities, and cross-game nights.
               </li>
-            </
+            </ul>
+          </article>
+
+          {/* Side cards */}
+          <article className="rounded-2xl border border-[#302823] bg-[#0b0908] p-4 flex flex-col justify-between">
+            <div>
+              <h3 className="font-semibold text-[#f6d48b] mb-2">
+                Featured Videos
+              </h3>
+              <p className="text-[#b9afa2]">
+                A curated selection of raid clears, PvP highlights, and
+                community moments from Federation members.
+              </p>
+            </div>
+            <p className="mt-3 text-[11px] text-[#a09586]">
+              Once submissions go live, officers will rotate standout clips
+              onto this page.
+            </p>
+          </article>
+
+          <article className="rounded-2xl border border-[#302823] bg-[#0b0908] p-4 flex flex-col justify-between">
+            <div>
+              <h3 className="font-semibold text-[#f6d48b] mb-2">
+                Streamers &amp; Creators
+              </h3>
+              <p className="text-[#b9afa2]">
+                A future directory of Federation-affiliated creators so members
+                can easily find and support one another.
+              </p>
+            </div>
+            <p className="mt-3 text-[11px] text-[#a09586]">
+              If you stream or produce videos, keep an eye here for how to get
+              listed.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* DISCORD INVITE (matches bottom of original content.html) */}
+      <section className="py-12 border-t border-[#211c19] text-center">
+        <h2 className="text-2xl font-bold mb-4 text-[#f6e9d2]">
+          Join The Federation Discord
+        </h2>
+        <p className="text-[#c9c3b6] max-w-xl mx-auto mb-6 text-sm md:text-base">
+          Hop into Discord to share clips, coordinate groups, and stay in the
+          loop on upcoming events and new content features.
+        </p>
+        <a
+          href="https://discord.gg/thefederation"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#f6d48b] text-black font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-[#ffdf9c] transition-all"
+        >
+          Join Our Discord
+        </a>
+      </section>
+    </main>
+  );
+}
