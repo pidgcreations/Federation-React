@@ -3,102 +3,140 @@
 @tailwind utilities;
 
 /* ================================
-   FEDERATION CALENDAR THEME
+   FEDERATION - REACT BIG CALENDAR THEME
    ================================ */
 
-/* Calendar root */
-.fc {
-  background-color: #050609 !important;
-  border: 1px solid #2b221b !important;
-  border-radius: 14px !important;
-  padding: 8px;
+/* Calendar container */
+.rbc-calendar {
+  background-color: #050609;
+  border: 1px solid #2b221b;
+  border-radius: 14px;
+  color: #d7c8b4;
+  padding: 4px;
 }
 
-/* Header title (month name) */
-.fc-toolbar-title {
-  color: #e9dfc9 !important;
-  font-weight: 600 !important;
+/* Toolbar (Today / Back / Next / Month / Week / Day / Agenda) */
+.rbc-toolbar {
+  background-color: #050609;
+  border-bottom: 1px solid #2b221b;
+  margin-bottom: 8px;
 }
 
-/* Nav + view buttons */
-.fc-button {
-  background: #0f0d0b !important;
-  border: 1px solid #3a2e22 !important;
-  color: #d7c8b4 !important;
-  border-radius: 6px !important;
-  text-transform: none !important;
+.rbc-toolbar-label {
+  color: #e9dfc9;
+  font-weight: 600;
 }
 
-.fc-button:hover {
-  background: #1a1714 !important;
-  color: #f6d48b !important;
+/* Toolbar buttons */
+.rbc-toolbar button {
+  background: #0f0d0b;
+  border: 1px solid #3a2e22;
+  color: #d7c8b4;
+  border-radius: 6px;
+  padding: 4px 10px;
+  text-transform: none;
+  font-size: 0.85rem;
 }
 
-.fc-button-active {
-  background: #2c231d !important;
-  color: #f6d48b !important;
-  border-color: #70512f !important;
+.rbc-toolbar button:hover {
+  background: #1a1714;
+  color: #f6d48b;
 }
 
-/* Grid lines */
-.fc-scrollgrid,
-.fc-scrollgrid table {
-  border-color: #3d3228 !important;
+.rbc-toolbar button.rbc-active {
+  background: #2c231d;
+  color: #f6d48b;
+  border-color: #70512f;
 }
 
-/* Day cells (all days) */
-.fc-daygrid-day {
-  background-color: #070707 !important;
-  border-color: #33281f !important;
+/* Month grid background */
+.rbc-month-view {
+  border-top: none;
+}
+
+.rbc-month-view,
+.rbc-row-bg,
+.rbc-day-bg {
+  background-color: #070707;
+}
+
+.rbc-header {
+  background-color: #101010;
+  color: #e0d5c0;
+  border-bottom: 1px solid #33281f;
+  padding: 4px 0;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Normal day cells */
+.rbc-date-cell {
+  color: #c8bfb1;
+  padding-right: 4px;
+}
+
+/* Days outside current month (no bright white!) */
+.rbc-off-range-bg {
+  background-color: #0b0a0a;
+}
+
+.rbc-off-range {
+  color: #7b7266;
 }
 
 /* Today highlight */
-.fc-day-today {
-  background: rgba(246, 212, 139, 0.12) !important;
-  border: 1px solid #f6d48b !important;
-  box-shadow: 0 0 12px rgba(246, 212, 139, 0.35) inset;
+.rbc-today {
+  background-color: rgba(246, 212, 139, 0.12);
+  box-shadow: inset 0 0 12px rgba(246, 212, 139, 0.35);
 }
 
-/* Days from previous / next month – no white! */
-.fc-day-other {
-  background-color: #0b0a0a !important;
-  opacity: 0.45;
+/* Cell borders */
+.rbc-month-row + .rbc-month-row {
+  border-top: 1px solid #33281f;
 }
 
-/* Day numbers */
-.fc-daygrid-day-number {
-  color: #c8bfb1 !important;
-  font-weight: 500 !important;
+.rbc-day-bg + .rbc-day-bg {
+  border-left: 1px solid #33281f;
 }
 
-/* Event pill styling */
-.fc-daygrid-event {
-  background: #184674 !important;
-  border: 1px solid #376897 !important;
-  border-radius: 6px !important;
-  padding: 3px 6px !important;
+/* Events (the little blue pill) */
+.rbc-event {
+  background-color: #184674;
+  border-radius: 6px;
+  border: 1px solid #376897;
+  padding: 2px 4px;
   box-shadow: 0 0 6px rgba(23, 105, 165, 0.4);
 }
 
-.fc-daygrid-event:hover {
-  background: #1f5a96 !important;
-  border-color: #4c88b9 !important;
+.rbc-event:hover {
+  background-color: #1f5a96;
+  border-color: #4c88b9;
   box-shadow: 0 0 10px rgba(60, 140, 200, 0.5);
 }
 
-/* Event title text */
-.fc-event-title {
-  color: #eaeaea !important;
-  font-weight: 600 !important;
-  font-size: 0.78rem !important;
+.rbc-event-content {
+  color: #eaeaea;
+  font-weight: 600;
+  font-size: 0.78rem;
 }
 
-/* Week/Day time grid background */
-.fc-timegrid-slot {
-  background-color: #050609 !important;
-  border-color: #2f241b !important;
+/* Week/Day/Agenda views still stay dark and readable */
+.rbc-time-view,
+.rbc-time-header,
+.rbc-time-content {
+  background-color: #050609;
 }
 
-.fc-timegrid-axis {
-  color: #b9afa2 !important;
+.rbc-time-header-content,
+.rbc-time-content > * + * {
+  border-left: 1px solid #33281f;
+}
+
+.rbc-time-slot {
+  border-top: 1px solid #33281f;
+}
+
+.rbc-agenda-view {
+  background-color: #050609;
+  color: #d7c8b4;
 }
