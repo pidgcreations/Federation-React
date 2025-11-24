@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ================================
    FEDERATION - REACT BIG CALENDAR THEME
    ================================ */
@@ -67,6 +71,12 @@
   padding: 4px 0;
   font-weight: 600;
   font-size: 0.85rem;
+
+  /* Center the day label in its box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Normal day cells */
@@ -120,23 +130,92 @@
   font-size: 0.78rem;
 }
 
-/* Week/Day/Agenda views still stay dark and readable */
+/* Week/Day/Agenda views - dark grid styling like month view */
+
 .rbc-time-view,
 .rbc-time-header,
 .rbc-time-content {
   background-color: #050609;
 }
 
+/* General borders for the time grid */
+.rbc-time-view,
+.rbc-time-header,
+.rbc-time-content,
+.rbc-timeslot-group,
+.rbc-time-gutter,
+.rbc-time-gutter .rbc-timeslot-group {
+  border-color: #33281f !important;
+}
+
+/* Vertical separators */
 .rbc-time-header-content,
 .rbc-time-content > * + * {
-  border-left: 1px solid #33281f;
+  border-left: 1px solid #33281f !important;
 }
 
+/* Horizontal slot lines */
 .rbc-time-slot {
-  border-top: 1px solid #33281f;
+  border-top: 1px solid #33281f !important;
 }
 
+/* Column borders (days) */
+.rbc-day-slot,
+.rbc-time-header-cell,
+.rbc-time-header-gutter {
+  border-color: #33281f !important;
+}
+
+/* Today highlight in week/day view */
+.rbc-time-view .rbc-today {
+  background-color: rgba(246, 212, 139, 0.12);
+  box-shadow: inset 0 0 12px rgba(246, 212, 139, 0.35);
+}
+
+/* Time labels (12 AM, 1 AM, etc.) */
+.rbc-time-gutter .rbc-time-slot {
+  color: #b0a99a;
+}
+
+/* Header cells in week view (Sun, Mon, etc.) */
+.rbc-time-header .rbc-header {
+  background-color: #101010;
+  color: #e0d5c0;
+  border-bottom: 1px solid #33281f;
+}
+
+/* Agenda view */
 .rbc-agenda-view {
   background-color: #050609;
   color: #d7c8b4;
+  border-color: #33281f;
+}
+
+/* Dark themed scrollbar for the week view time grid */
+.rbc-time-content {
+  /* Existing background from before, keep if you already have it */
+  background-color: #050609;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #33281f #050609;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+.rbc-time-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rbc-time-content::-webkit-scrollbar-track {
+  background: #050609;
+}
+
+.rbc-time-content::-webkit-scrollbar-thumb {
+  background-color: #33281f;
+  border-radius: 9999px;
+  border: 1px solid #1a1410;
+}
+
+.rbc-time-content::-webkit-scrollbar-thumb:hover {
+  background-color: #70512f;
 }

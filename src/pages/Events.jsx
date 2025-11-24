@@ -201,6 +201,8 @@ export default function Events() {
             style={{ height: 500 }}
             components={{ event: CalendarEvent }}
             onSelectEvent={(evt) => setSelectedEvent(evt)}
+            views={["month", "week", "agenda"]}
+            defaultView="month"
           />
         </div>
 
