@@ -46,9 +46,6 @@ export default function Navbar() {
           <Link to="/content" className="hover:text-[#f7d48c]">
             Content
           </Link>
-          <Link to="/map" className="hover:text-[#f7d48c]">
-            Map
-          </Link>
         </nav>
 
         {/* Mobile menu button */}
@@ -111,13 +108,6 @@ export default function Navbar() {
               onClick={closeMobile}
             >
               Content
-            </Link>
-            <Link
-              to="/map"
-              className="hover:text-[#f7d48c]"
-              onClick={closeMobile}
-            >
-              Map
             </Link>
           </nav>
         </div>
