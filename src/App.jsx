@@ -10,8 +10,6 @@ import Guides from "./pages/Guides.jsx";
 import GuideCrates from "./pages/GuideCrates.jsx";
 import GuideClasses from "./pages/GuideClasses.jsx";
 import Content from "./pages/Content.jsx";
-import AshesMap from "./pages/AshesMap.jsx";
-
 
 export default function App() {
   return (
@@ -27,8 +25,6 @@ export default function App() {
             <Route path="/guides/crates" element={<GuideCrates />} />
             <Route path="/guides/classes" element={<GuideClasses />} />
             <Route path="/content" element={<Content />} />
-            {/* ✅ Map route is now properly inside <Routes> */}
-            <Route path="/map" element={<AshesMap />} />
             {/* Fallback */}
             <Route path="*" element={<Home />} />
           </Routes>
