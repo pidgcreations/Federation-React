@@ -39,10 +39,10 @@ export default function Home() {
         <div className="mt-6 grid md:grid-cols-3 gap-5 text-sm">
           <div className="rounded-xl border border-[#302823] bg-[#0b0908] p-4">
             <h3 className="font-semibold mb-2 text-[#f6d48b]">
-              Mature, Team-Focused Community
+              Team-Focused Community
             </h3>
             <p className="text-[#b9afa2]">
-              A respectful, drama-free environment built for adults who value teamwork,
+              A welcoming space built on mutual respect, teamwork,
               communication, and a positive, growth-oriented culture.
             </p>
           </div>
